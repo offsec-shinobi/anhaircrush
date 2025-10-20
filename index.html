@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Crush | Define Your Signature Style</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration for the Chic Aesthetic */
+        :root {
+            --color-primary: #eb0875b8; /* Muted Rose Gold/Copper Accent */
+            --color-text-light: #f5f5f5;
+        }
+
+        /* Set default font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Deep Charcoal */
+            color: var(--color-text-light);
+        }
+
+        /* Subtle Background Texture/Overlay on Hero */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x800/222/FFF?text=Luxury+Salon+Interior') no-repeat center center/cover;
+            background-attachment: fixed; /* Parallax effect cue */
+        }
+
+        /* Custom Rose Gold Accent Button */
+        .btn-accent {
+            background-color: var(--color-primary);
+            color: white;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(163, 86, 86, 0.5);
+        }
+        .btn-accent:hover {
+            background-color: #c08484;
+            transform: translateY(-2px);
+        }
+
+        /* Active Tab Styling */
+        .tab-active {
+            border-bottom: 2px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* Sticky Footer for Mobile CTA */
+        .sticky-footer-cta {
+            z-index: 50;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background-color: rgba(26, 26, 26, 0.95);
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+            /* Only show on screens smaller than large (lg) */
+            display: block;
+        }
+
+        @media (min-width: 1024px) {
+            .sticky-footer-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 bg-gray-900/95 shadow-lg z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#home" class="text-2xl font-black tracking-widest text-white uppercase" style="color: var(--color-primary);">
+                   AN Hair Crush
+                </a>
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8 font-medium">
+                    <a href="#home" class="text-gray-300 hover:text-white transition duration-150">Home</a>
+                    <a href="#services" class="text-gray-300 hover:text-white transition duration-150">Services</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-white transition duration-150">Gallery</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition duration-150">Contact</a>
+                    <button class="btn-accent px-4 py-1 rounded-full text-sm">BOOK NOW</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
+            <div class="p-8 max-w-4xl">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 uppercase" style="color: var(--color-text-light);">
+                    Define Your Signature Style
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-8">
+                    Where precision meets passion. Explore our curated range of hair, skin, and grooming services.
+                </p>
+                <a href="#services" class="btn-accent px-8 py-3 rounded-full text-lg font-semibold">
+                    Explore Services
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 uppercase" style="color: var(--color-primary);">Our Menu</h2>
+
+            <!-- Service Tabs/Navigation -->
+            <div id="service-tabs" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+                <button data-tab="men" class="tab-button p-3 rounded-lg text-sm md:text-base font-medium text-center hover:bg-gray-800 transition duration-200">Men's Grooming</button>
+                <button data-tab="women-style" class="tab-button p-3 rounded-lg text-sm md:text-base font-medium text-center hover:bg-gray-800 transition duration-200">Women's Styling</button>
+                <button data-tab="hair-protocol" class="tab-button p-3 rounded-lg text-sm md:text-base font-medium text-center hover:bg-gray-800 transition duration-200">Hair Care Protocols</button>
+                <button data-tab="text-protocol" class="tab-button p-3 rounded-lg text-sm md:text-base font-medium text-center hover:bg-gray-800 transition duration-200">Texture Change Treatments</button>
+                <button data-tab="facials" class="tab-button p-3 rounded-lg text-sm md:text-base font-medium text-center hover:bg-gray-800 transition duration-200">Facials & Body Detan</button>
+                <button data-tab="mani-wax" class="tab-button p-3 rounded-lg text-sm md:text-base font-medium text-center hover:bg-gray-800 transition duration-200">Manicure & Pedicure</button>
+                <button data-tab="wax" class="tab-button p-3 rounded-lg text-sm md:text-base font-medium text-center hover:bg-gray-800 transition duration-200">Waxing</button>
+            </div>
+
+            <!-- Service Content Container -->
+            <div id="service-content" class="bg-gray-800 rounded-xl p-6 shadow-2xl">
+                
+                <!-- 1. Men's Grooming -->
+                <div data-content="men" class="service-panel hidden">
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--color-primary);">Men's Grooming</h3>
+                    
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-4 border-b border-gray-600 pb-1">HAIRCUTS & BEARD</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Hair cut</span><span class="font-bold text-rose-300">150</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Shave (Classic)</span><span class="font-bold text-rose-300">100</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Gold Shave (Premium)</span><span class="font-bold text-rose-300">300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Advance Haircut</span><span class="font-bold text-rose-300">250</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Head Shave</span><span class="font-bold text-rose-300">250</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Kids Hair Cut</span><span class="font-bold text-rose-300">130</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Hair Wash</span><span class="font-bold text-rose-300">100</span></div>
+                    </div>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">Hair Colour</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Loreal Inoa (Ammonia Free)</span><span class="font-bold text-rose-300">1000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Majirel</span><span class="font-bold text-rose-300">800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Schwarzkopf (Ammonia Free)</span><span class="font-bold text-rose-300">800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Streax</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Beard Colour</span><span class="font-bold text-rose-300">300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Moustache Colour</span><span class="font-bold text-rose-300">100</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Gents Fashion Colour (Global)</span><span class="font-bold text-rose-300">1500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Per Stick Hilight</span><span class="font-bold text-rose-300">200</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Advance Stick Hilight</span><span class="font-bold text-rose-300">500</span></div>
+                    </div>
+                </div>
+
+                <!-- 2. Women's Styling -->
+                <div data-content="women-style" class="service-panel hidden">
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--color-primary);">Women's Styling</h3>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-4 border-b border-gray-600 pb-1">HAIR CUTS & STYLING</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Creative Haircut (incl. wash & blow dry)</span><span class="font-bold text-rose-300">1000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Layer Hair Cut (incl. wash & blow dry)</span><span class="font-bold text-rose-300">700</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Bob Hair Cut (incl. wash & blow dry)</span><span class="font-bold text-rose-300">800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Feather Hair Cut (incl. wash & blow dry)</span><span class="font-bold text-rose-300">700</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Butterfly Hair Cut (incl. wash & blow dry)</span><span class="font-bold text-rose-300">800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">U Haircut</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">V Haircut</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">State Haircut</span><span class="font-bold text-rose-300">300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Kids Hair Cut</span><span class="font-bold text-rose-300">300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Curtain Bangs</span><span class="font-bold text-rose-300">200</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Hair Wash</span><span class="font-bold text-rose-300">300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Shampoo n Conditioner (Normal Style)</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Shampoo n Conditioner (Ironing Styling)</span><span class="font-bold text-rose-300">1000</span></div>
+                    </div>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">Hair Colour</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Root Touch Up</span><span class="font-bold text-rose-300">1000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Loreal (Ammonia Free)</span><span class="font-bold text-rose-300">1300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Global Colouring (Regular)</span><span class="font-bold text-rose-300">3000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Loreal Global (Ammonia Free)</span><span class="font-bold text-rose-300">4000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Per Stick Highlight</span><span class="font-bold text-rose-300">300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Advance Stick Highlight</span><span class="font-bold text-rose-300">500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Balayage Colour</span><span class="font-bold text-rose-300">6000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Ombre Colour</span><span class="font-bold text-rose-300">6000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700 md:col-span-2"><span class="text-gray-200 font-semibold">Advance Creative Colouring</span><span class="font-bold text-rose-300 text-lg">7000</span></div>
+                    </div>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">Threading (Face)</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Eyebrows</span><span class="font-bold text-rose-300">40</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Forehead</span><span class="font-bold text-rose-300">30</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Chin</span><span class="font-bold text-rose-300">30</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Upper Lips</span><span class="font-bold text-rose-300">20</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Side Lock</span><span class="font-bold text-rose-300">40</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700 md:col-span-5"><span class="text-gray-200 font-semibold">Full Face</span><span class="font-bold text-rose-300">150</span></div>
+                    </div>
+                </div>
+
+                <!-- 3. Hair Protocols & Texture -->
+                <div data-content="hair-protocol" class="service-panel hidden">
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--color-primary);">Hair Care Protocols</h3>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-4 border-b border-gray-600 pb-1">HAIR CARE PROTOCOLS (Men's)</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Bio Keratin Hair Spa</span><span class="font-bold text-rose-300">1500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Wella Hair Spa</span><span class="font-bold text-rose-300">1300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Loreal Hair Spa</span><span class="font-bold text-rose-300">900</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Schwarzkopf Hair Spa</span><span class="font-bold text-rose-300">800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Matticks Hair Spa</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Anti Dandruff Treatment</span><span class="font-bold text-rose-300">1200</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Anti Hair Fall Treatment</span><span class="font-bold text-rose-300">1000</span></div>
+                    </div>
+                    
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">HAIR CARE PROTOCOLS (Women's)</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Bio Keratin Hair Spa (Medium Length)</span><span class="font-bold text-rose-300">2500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Wella Deep Nourishing Hair Spa (Medium Length)</span><span class="font-bold text-rose-300">1800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Loreal Hair Spa (Medium Length)</span><span class="font-bold text-rose-300">1300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Loreal Deep Nourishing Treatment</span><span class="font-bold text-rose-300">1500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Loreal Frizz Control Treatment</span><span class="font-bold text-rose-300">1700</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Schwarzkopf Hair Spa (Medium Length)</span><span class="font-bold text-rose-300">1300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Matticks Hair Spa (Medium Length)</span><span class="font-bold text-rose-300">1000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Anti Dandruff Control Treatment</span><span class="font-bold text-rose-300">1800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Anti Hair Fall Treatment</span><span class="font-bold text-rose-300">1500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Olaplex Shine n Smooth Hair Spa</span><span class="font-bold text-rose-300">1800</span></div>
+                    </div>
+                    
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">MASSAGE THERAPY(Men's)</h4>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Head Massage (30 min)</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Back Massage (20 min)</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Leg Massage (20 min)</span><span class="font-bold text-rose-300">500</span></div>
+                    </div>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">MASSAGE THERAPY(Women's)</h4>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Head Massage (30 min)</span><span class="font-bold text-rose-300">700</span></div>
+                        
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Back Massage (20 min)</span><span class="font-bold text-rose-300">500</span></div>
+                       
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Leg Massage (20 min)</span><span class="font-bold text-rose-300">400</span></div>
+                    </div>
+
+                </div>
+                <!-- End of Hair Protocols & Texture -->
+                 <!-- Texture -->
+
+                 <div data-content="text-protocol" class="service-panel hidden">
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--color-primary);"> Texture Chanhe Treatments</h3>
+
+                   
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">Texture Chanhe Treatments</h4>
+                    <p class="text-gray-400 italic mb-4">Prices listed are for medium length hair.</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Men's Prices -->
+                        <div class="col-span-2 text-md text-rose-400 font-medium border-b border-rose-900/50 pb-1">-- Men's Prices --</div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Smoothing</span><span class="font-bold text-rose-300">2500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Straightening</span><span class="font-bold text-rose-300">2500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Keratin</span><span class="font-bold text-rose-300">2500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Botox</span><span class="font-bold text-rose-300">3000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Nano Plastia</span><span class="font-bold text-rose-300">3000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Elastin Treatment</span><span class="font-bold text-rose-300">2500</span></div>
+                        
+                        <!-- Women's Prices -->
+                        <div class="col-span-2 text-md text-rose-400 font-medium mt-4 border-b border-rose-900/50 pb-1">-- Women's Prices --</div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Smoothing</span><span class="font-bold text-rose-300">5000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Straightening</span><span class="font-bold text-rose-300">5000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Keratin Treatment</span><span class="font-bold text-rose-300">5000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Protein Hair Botox</span><span class="font-bold text-rose-300">7000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Nano Plastic Silky & Shine Tritment</span><span class="font-bold text-rose-300">7000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Elastin Treatment (Damage Repair)</span><span class="font-bold text-rose-300">6000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Tmpempring Straightening</span><span class="font-bold text-rose-300">800</span></div>
+                    </div>
+                </div>
+
+                <!-- 4. Facials & Body Detan -->
+                <div data-content="facials" class="service-panel hidden">
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--color-primary);">Facials & Body Detan</h3>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-4 border-b border-gray-600 pb-1">FACIALS</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Herbel Fruit Clean Up</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Lotus Clean Up</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Vlcc Natural Sciences</span><span class="font-bold text-rose-300">1000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Vlcc Anti Blemish</span><span class="font-bold text-rose-300">1500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Aroma Magic Bridal Glow Facial</span><span class="font-bold text-rose-300">1500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Lotus Anti Tan Whitening Glow</span><span class="font-bold text-rose-300">1500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Lotus Gold</span><span class="font-bold text-rose-300">1800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">O3+ Shining Glow</span><span class="font-bold text-rose-300">3500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">O3+ Bridal Facial (Standard)</span><span class="font-bold text-rose-300">3800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">O3+ Bridal Facial (Radiant Glowing Skin)</span><span class="font-bold text-rose-300">4500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Wine Facial</span><span class="font-bold text-rose-300">1800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Korean Glass Facial</span><span class="font-bold text-rose-300">6000</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700 md:col-span-2"><span class="text-gray-200 font-semibold">Lotus Bearberry Advance Skin Whitening Facial</span><span class="font-bold text-rose-300 text-lg">5000</span></div>
+                    </div>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-6 border-b border-gray-600 pb-1">DETAN & POLISHING</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">O3+ Neck n Face De-Tan</span><span class="font-bold text-rose-300">700</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Raaga Face n Neck</span><span class="font-bold text-rose-300">500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Vlcc Face n Neck</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Hand Full</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Hand Half</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Leg Half</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700 md:col-span-2"><span class="text-gray-200 font-semibold">Full Body Polishing</span><span class="font-bold text-rose-300 text-lg">3000</span></div>
+                    </div>
+                </div>
+
+                <!-- 5. Mani/Pedi & Waxing -->
+                <div data-content="mani-wax" class="service-panel hidden">
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--color-primary);">Manicure, Pedicure & Waxing</h3>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-4 border-b border-gray-600 pb-1">PEDICURE + MANI CURE COMBO</h4>
+                    <p class="text-gray-400 italic mb-4 text-sm">Prices include discounted combo rate. Duration listed in minutes (mnt).</p>
+                    <div class="overflow-x-auto mb-8">
+                        <table class="min-w-full divide-y divide-gray-700 rounded-lg">
+                            <thead class="bg-gray-700">
+                                <tr>
+                                    <th scope="col" class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-300">Brand</th>
+                                    <th scope="col" class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-300">Pedicure</th>
+                                    <th scope="col" class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-300">Manicure</th>
+                                    <th scope="col" class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-300">Combo Price</th>
+                                    <th scope="col" class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-300">Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="bg-gray-800 hover:bg-gray-700/50"><td class="px-3 py-4 whitespace-nowrap font-medium text-gray-100">Icecream</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">1500</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">1300</td><td class="px-3 py-4 whitespace-nowrap font-bold text-rose-400">2000</td><td class="px-3 py-4 whitespace-nowrap text-gray-400">25 min</td></tr>
+                                <tr class="bg-gray-800 hover:bg-gray-700/50"><td class="px-3 py-4 whitespace-nowrap font-medium text-gray-100">O3+</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">1200</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">1000</td><td class="px-3 py-4 whitespace-nowrap font-bold text-rose-400">2000</td><td class="px-3 py-4 whitespace-nowrap text-gray-400">25 min</td></tr>
+                                <tr class="bg-gray-800 hover:bg-gray-700/50"><td class="px-3 py-4 whitespace-nowrap font-medium text-gray-100">Ragga</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">1000</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">800</td><td class="px-3 py-4 whitespace-nowrap font-bold text-rose-400">1500</td><td class="px-3 py-4 whitespace-nowrap text-gray-400">15 min</td></tr>
+                                <tr class="bg-gray-800 hover:bg-gray-700/50"><td class="px-3 py-4 whitespace-nowrap font-medium text-gray-100">Ocean Hydro</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">1000</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">800</td><td class="px-3 py-4 whitespace-nowrap font-bold text-rose-400">1500</td><td class="px-3 py-4 whitespace-nowrap text-gray-400">15 min</td></tr>
+                                <tr class="bg-gray-800 hover:bg-gray-700/50"><td class="px-3 py-4 whitespace-nowrap font-medium text-gray-100">Aroma Magic (Berry)</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">800</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">600</td><td class="px-3 py-4 whitespace-nowrap font-bold text-rose-400">1200</td><td class="px-3 py-4 whitespace-nowrap text-gray-400">15 min</td></tr>
+                                <tr class="bg-gray-800 hover:bg-gray-700/50"><td class="px-3 py-4 whitespace-nowrap font-medium text-gray-100">Lotus</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">600</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">400</td><td class="px-3 py-4 whitespace-nowrap font-bold text-rose-400">800</td><td class="px-3 py-4 whitespace-nowrap text-gray-400">5 min</td></tr>
+                                <tr class="bg-gray-800 hover:bg-gray-700/50"><td class="px-3 py-4 whitespace-nowrap font-medium text-gray-100">Fruit Herbal</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">500</td><td class="px-3 py-4 whitespace-nowrap text-rose-300">400</td><td class="px-3 py-4 whitespace-nowrap font-bold text-rose-400">600</td><td class="px-3 py-4 whitespace-nowrap text-gray-400">5 min</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-4 border-b border-gray-600 pb-1">WAXING (Women's)</h4>
+                    
+                    <h5 class="text-lg font-medium text-rose-400 mb-2">Standard Waxing Cleanup</h5>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Upper Lips</span><span class="font-bold text-rose-300">$60</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Lower Lips</span><span class="font-bold text-rose-300">$50</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Side Look</span><span class="font-bold text-rose-300">$100</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Forehead</span><span class="font-bold text-rose-300">$70</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Underarm</span><span class="font-bold text-rose-300">$150</span></div>
+                    </div>
+
+                    <h5 class="text-lg font-medium text-rose-400 mb-2 mt-6">Rica Wax (Premium)</h5>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Hand</span><span class="font-bold text-rose-300">$450</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Half Hand</span><span class="font-bold text-rose-300">$350</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Legs</span><span class="font-bold text-rose-300">$600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Half Legs</span><span class="font-bold text-rose-300">$450</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Back</span><span class="font-bold text-rose-300">$600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Tummy</span><span class="font-bold text-rose-300">$400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">V Line</span><span class="font-bold text-rose-300">$400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">V Full</span><span class="font-bold text-rose-300">$1500</span></div>
+                    </div>
+
+                    <h5 class="text-lg font-medium text-rose-400 mb-2 mt-6">Roll Wax</h5>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Underarm</span><span class="font-bold text-rose-300">$200</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Hand</span><span class="font-bold text-rose-300">$500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Legs</span><span class="font-bold text-rose-300">$800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Half Legs</span><span class="font-bold text-rose-300">$300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Tummy</span><span class="font-bold text-rose-300">$500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Back</span><span class="font-bold text-rose-300">$800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700 md:col-span-2"><span class="text-gray-200 font-semibold">Full Body</span><span class="font-bold text-rose-300 text-lg">$3500</span></div>
+                    </div>
+                </div>
+
+            
+            <!--- Waxing-->
+            <div data-content="wax" class="service-panel hidden">
+                    <h3 class="text-3xl font-semibold mb-6" style="color: var(--color-primary);">Waxing</h3>                        
+
+                    <h4 class="text-xl font-medium text-gray-100 mb-2 mt-4 border-b border-gray-600 pb-1">WAXING</h4>
+                    
+                    <h5 class="text-lg font-medium text-rose-400 mb-2">Standard Waxing Cleanup</h5>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Upper Lips</span><span class="font-bold text-rose-300">60</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Lower Lips</span><span class="font-bold text-rose-300">50</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Side Look</span><span class="font-bold text-rose-300">100</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Forehead</span><span class="font-bold text-rose-300">70</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Underarm</span><span class="font-bold text-rose-300">150</span></div>
+                    </div>
+
+                    <h5 class="text-lg font-medium text-rose-400 mb-2 mt-6">Rica Wax (Premium)</h5>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Hand</span><span class="font-bold text-rose-300">450</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Half Hand</span><span class="font-bold text-rose-300">350</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Legs</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Half Legs</span><span class="font-bold text-rose-300">450</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Back</span><span class="font-bold text-rose-300">600</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Tummy</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">V Line</span><span class="font-bold text-rose-300">400</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">V Full</span><span class="font-bold text-rose-300">1500</span></div>
+                    </div>
+
+                    <h5 class="text-lg font-medium text-rose-400 mb-2 mt-6">Roll Wax</h5>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Underarm</span><span class="font-bold text-rose-300">200</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Hand</span><span class="font-bold text-rose-300">500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Legs</span><span class="font-bold text-rose-300">800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Half Legs</span><span class="font-bold text-rose-300">300</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Tummy</span><span class="font-bold text-rose-300">500</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700"><span class="text-gray-200">Full Back</span><span class="font-bold text-rose-300">800</span></div>
+                        <div class="flex justify-between py-2 border-b border-gray-700 md:col-span-2"><span class="text-gray-200 font-semibold">Full Body</span><span class="font-bold text-rose-300 text-lg">3500</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-16 md:py-24 bg-gray-900 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 uppercase" style="color: var(--color-primary);">Our Portfolio</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Placeholder Images (Replace with real photos) -->
+                    <img src="hair_coloring.jpg" onerror="this.src='https://placehold.co/600x600/3d3d3d/b8b8b8?text=Hair+Color'" alt="Hair Color Portfolio" class="w-full h-auto rounded-lg shadow-lg hover:opacity-80 transition duration-300 object-cover aspect-square">
+                    <img src="groomi.webp" onerror="this.src='https://placehold.co/600x600/3d3d3d/b8b8b8?text=Grooming'" alt="Men's Grooming Portfolio" class="w-full h-auto rounded-lg shadow-lg hover:opacity-80 transition duration-300 object-cover aspect-square">
+                    <img src="facial.webp" onerror="this.src='https://placehold.co/600x600/3d3d3d/b8b8b8?text=Bridal+Facial'" alt="Bridal Facial Portfolio" class="w-full h-auto rounded-lg shadow-lg hover:opacity-80 transition duration-300 object-cover aspect-square">
+                    <img src="wash.jpg" onerror="this.src='https://placehold.co/600x600/3d3d3d/b8b8b8?text=Texture+Treat'" alt="Texture Treatment Portfolio" class="w-full h-auto rounded-lg shadow-lg hover:opacity-80 transition duration-300 object-cover aspect-square">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="bg-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid md:grid-cols-3 gap-8 text-gray-400">
+                <!-- About -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-white" style="color: var(--color-primary);">AN Hair Crush</h4>
+                    <p>We are dedicated to crafting personalized beauty experiences. Book your transformation today.</p>
+                </div>
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-white">Get in Touch</h4>
+                    <p> 1st Floor, 211, Second main road, Eash of NGEF Layout, Kasturthi Nagar, Bengaluru, Karnataka 560064</p>
+                    <p>Phone: +91 7406363175</p>
+                    
+                </div>
+                <!-- Hours -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-white">Hours</h4>
+                    <p>All Days: 09:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2025 AN Hair Crush. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA Footer (Visible on Mobile) -->
+    <div class="sticky-footer-cta lg:hidden">
+        <button class="btn-accent w-full py-3 rounded-xl text-lg font-bold uppercase">
+            Book Your Appointment Now
+        </button>
+    </div>
+
+    <!-- JavaScript for Tab Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-button');
+            const panels = document.querySelectorAll('.service-panel');
+
+            // Function to change the active tab and content
+            function showTab(tabName) {
+                // Remove active styling from all tabs
+                tabs.forEach(tab => tab.classList.remove('tab-active', 'bg-gray-700/50'));
+                
+                // Hide all content panels
+                panels.forEach(panel => panel.classList.add('hidden'));
+
+                // Find the clicked tab and add active styling
+                const activeTab = document.querySelector(`.tab-button[data-tab="${tabName}"]`);
+                if (activeTab) {
+                    // Use a subtle background on the active tab for better visibility, especially on smaller screens
+                    activeTab.classList.add('tab-active', 'bg-gray-700/50');
+                }
+
+                // Show the corresponding content panel
+                const activePanel = document.querySelector(`.service-panel[data-content="${tabName}"]`);
+                if (activePanel) {
+                    activePanel.classList.remove('hidden');
+                }
+            }
+
+            // Event listener for tab clicks
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (event) => {
+                    const tabName = event.target.getAttribute('data-tab');
+                    showTab(tabName);
+                });
+            });
+
+            // Default: Show the "Men's Grooming" tab on load
+            showTab('men');
+        });
+    </script>
+</body>
+</html>
